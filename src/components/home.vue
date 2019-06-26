@@ -121,12 +121,12 @@ export default {
     }
   },
   created() {
-    fetch('https://servis.mgm.gov.tr/api/merkezler/iller')
+    /*fetch('https://servis.mgm.gov.tr/api/merkezler/iller')
       .then(res => res.json())
       .then(data => {
         this.order = data.sort((a,b) => (a.il > b.il) ? 1 : ((b.il > a.il) ? -1 : 0));
         this.weather = this.order;
-      })
+      })*/
   }
 }
 </script>
