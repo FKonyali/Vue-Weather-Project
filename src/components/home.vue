@@ -1,8 +1,104 @@
 <template>
-  <div class="wrapper">
+  <!--<div class="wrapper">
     <div class="row">
       <div class="col-md-2" v-for="item in weather" :key="item.id">
         <cityClick :data="[item.merkezId, item.il]"/>
+      </div>
+    </div>
+  </div>-->
+
+  <div class="weather">
+    <div class="weather__top">
+      <div class="weather__texts">
+        <div class="weather__title">
+          Hava Durumu
+        </div>
+        <div class="weather__ct">
+          <div class="weather__city">
+            <selectCity/>
+          </div>
+          <div class="weather__time">
+            20:15
+          </div>
+        </div>
+      </div>
+      <div class="weather__bicon">
+        icon
+      </div>
+    </div>
+    <div class="weather__bot">
+      <div class="weather__bcol weather__today">
+        <div class="weather__cl">
+          <div class="weather__degree weather__degree--is-big">
+            33°
+          </div>
+          <div class="weather__day">
+            26 Haziran - 11.33
+          </div>
+        </div>
+        <div class="weather__cr">
+          <div class="weather__icon">
+            icon
+          </div>
+          <div class="weather__wind">
+            Rüzgar: 6km/sa
+          </div>
+        </div>
+      </div>
+      <div class="weather__bcol">
+        <div class="weather__day">
+          Çar
+        </div>
+        <div class="weather__icon">
+          icon
+        </div>
+        <div class="weather__degree">
+          22°
+        </div>
+      </div>
+      <div class="weather__bcol">
+        <div class="weather__day">
+          Prş
+        </div>
+        <div class="weather__icon">
+          icon
+        </div>
+        <div class="weather__degree">
+          22°
+        </div>
+      </div>
+      <div class="weather__bcol">
+        <div class="weather__day">
+          Cuma
+        </div>
+        <div class="weather__icon">
+          icon
+        </div>
+        <div class="weather__degree">
+          22°
+        </div>
+      </div>
+      <div class="weather__bcol">
+        <div class="weather__day">
+          Cmt
+        </div>
+        <div class="weather__icon">
+          icon
+        </div>
+        <div class="weather__degree">
+          22°
+        </div>
+      </div>
+      <div class="weather__bcol">
+        <div class="weather__day">
+          Paz
+        </div>
+        <div class="weather__icon">
+          icon
+        </div>
+        <div class="weather__degree">
+          22°
+        </div>
       </div>
     </div>
   </div>
@@ -10,10 +106,12 @@
 
 <script>
 import cityClick from './cityClick.vue';
+import selectCity from './selectCity.vue';
 export default {
   name: 'home',
   components: {
-    cityClick
+    cityClick,
+    selectCity
   },
   data() {
     return {
@@ -34,29 +132,5 @@ export default {
 </script>
 
 <style lang="sass">
-  h1
-    color: red
-
-  .row
-    display: flex
-    flex-wrap: wrap
-    width: 600px
-    margin: 0 auto
-    max-width: 100%
-
-  .col-md-2
-    width: 20%
-    padding: 0 15px
-
-  .col
-    margin: 15px 0
-    user-select: none
-
-  .degree
-    margin-bottom: 10px
-    padding: 25% 0
-    color: #000
-    font-size: 20px
-    border-radius: 10px
-
+  @import "../assets/sass/_main.sass"
 </style>
