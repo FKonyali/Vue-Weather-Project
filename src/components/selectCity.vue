@@ -5,7 +5,7 @@
         </div>
         <div class="select__contents" v-if="openAllCityOpen === true">
             <div class="select__item" v-for="item in cities" :key="item.id">
-                <span v-on:click="clickCity(item.merkezId)" v-html="item.il">{{item.il}}</span>
+                <span v-on:click="clickCity(item.merkezId, $event)">{{item.il}}</span>
             </div>
         </div>
     </div>
@@ -55,9 +55,9 @@ export default {
             });
     },
     methods: {
-        clickCity: function(e) {
+        clickCity: function(e,x) {
             if(this.openAllCityOpen == true) {
-                this.geoFindLocation = 'Adana';
+                this.geoFindLocation = x.currentTarget.innerHTML;
             }
             this.openAllCityOpen = false;
             
@@ -117,7 +117,7 @@ export default {
             }
         },
         allowGeo(position) {
-            console.log(this.coordinator);
+            //console.log(this.coordinator);
             this.geoButtonsGet = 'allow';
             this.coordinator = [
                 {

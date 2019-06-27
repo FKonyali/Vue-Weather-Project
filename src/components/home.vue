@@ -27,24 +27,7 @@
       </div>
     </div>
     <div class="weather__bot">
-      <div class="weather__bcol weather__today">
-        <div class="weather__cl">
-          <div class="weather__degree weather__degree--is-big">
-            33°
-          </div>
-          <div class="weather__day">
-            26 Haziran - 11.33
-          </div>
-        </div>
-        <div class="weather__cr">
-          <div class="weather__icon">
-            icon
-          </div>
-          <div class="weather__wind">
-            Rüzgar: 6km/sa
-          </div>
-        </div>
-      </div>
+      <todayDegree :todayData="[resultTemplateArr]"/>
       <div class="weather__bcol">
         <div class="weather__day">
           Çar
@@ -107,17 +90,20 @@
 <script>
 import cityClick from './cityClick.vue';
 import selectCity from './selectCity.vue';
+import todayDegree from './todayDegree.vue';
 export default {
   name: 'home',
   components: {
     cityClick,
-    selectCity
+    selectCity,
+    todayDegree
   },
   data() {
     return {
       weather: [],
       wColor: [],
-      order: ''
+      order: '',
+      resultTemplateArr: []
     }
   },
   created() {
@@ -127,6 +113,7 @@ export default {
         this.order = data.sort((a,b) => (a.il > b.il) ? 1 : ((b.il > a.il) ? -1 : 0));
         this.weather = this.order;
       })*/
+    console.log(selectCity.methods.allowGeo)
   }
 }
 </script>
