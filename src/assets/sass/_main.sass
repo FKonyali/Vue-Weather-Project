@@ -51,6 +51,8 @@ h1
 
 
 
+img
+    pointer-events: none
 
 
 .weather
@@ -78,8 +80,11 @@ h1
 
     &__bicon
         color: #FFF
-        padding: 20px 0
         text-align: center
+        min-height: 204px
+
+        img
+            width: 200px
 
     &__bot
         background: #FFF
@@ -139,3 +144,39 @@ h1
         color: #000
         text-align: left
         box-shadow: 0 1px 2px rgba(0,0,0, .3)
+
+
+@media (max-width: 1065px)
+    .weather
+        width: 800px
+
+        &__cl
+            padding: 0 10px
+
+        &__cr
+            padding: 0 10px
+
+        &__bcol
+            padding: 0 5px
+
+@media (max-width: 800px)
+    .weather
+        width: 100%
+
+        &__bcol
+            width: 50%
+            border-right: 0
+            border-bottom: 1px solid #dfdfdf
+            padding: 10px 0
+
+            &:last-child
+                border-bottom: 0
+
+        &__today
+            width: 100%
+
+        &__bot
+            padding: 10px 0
+
+        &__top
+            padding: 20px 15px
