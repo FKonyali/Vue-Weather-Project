@@ -1,21 +1,3 @@
-@font-face
-    font-family: 'Arial Nova'
-    font-style: normal
-    font-weight: normal
-    src: local('Arial Nova'), url('/assets/fonts/ArialNova.woff') format('woff')
-
-@font-face
-    font-family: 'Arial Nova'
-    font-style: normal
-    font-weight: 300
-    src: local('Arial Nova'), url('/assets/fonts/ArialNova-Light.woff') format('woff')
-
-@font-face
-    font-family: 'Arial Nova'
-    font-style: normal
-    font-weight: 700
-    src: local('Arial Nova'), url('/assets/fonts/ArialNova-Bold.woff') format('woff')
-    
 *
     margin: 0
     padding: 0
@@ -128,7 +110,10 @@ img
 
     &__item
         cursor: pointer
-        padding: 5px 10px
+
+        span
+            display: block
+            padding: 5px 10px
 
         &--is-selected
             display: block

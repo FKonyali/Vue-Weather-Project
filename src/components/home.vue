@@ -11,7 +11,7 @@
               <div class="select__item select__item--is-selected" v-on:click="openAllCity">
                 {{geoFindLocation}}
               </div>
-              <div class="select__contents" v-if="openAllCityOpen === true">
+              <div class="select__contents" v-show="openAllCityOpen === true">
                 <div class="select__item" v-for="item in cities" :key="item.id">
                   <span v-on:click="clickCity(item.merkezId, $event)">{{item.il}}</span>
                 </div>
@@ -96,7 +96,8 @@ export default {
                     //console.log('...');
                     for(let a = 0; a < data.length; a++) {
                         //console.log(distance(this.coordinator[0].x, this.coordinator[0].y, data[a].boylam, data[a].enlem));
-                        if(this.distance(this.coordinator[0].y, this.coordinator[0].x, data[a].boylam, data[a].enlem) > 0 && this.distance(this.coordinator[0].y, this.coordinator[0].x, data[a].boylam, data[a].enlem) < 30) {
+                        //console.log(this.distance(this.coordinator[0].y, this.coordinator[0].x, data[a].boylam, data[a].enlem));
+                        if(this.distance(this.coordinator[0].y, this.coordinator[0].x, data[a].boylam, data[a].enlem) > 0 && this.distance(this.coordinator[0].y, this.coordinator[0].x, data[a].boylam, data[a].enlem) < 20) {
                             this.geoFindLocation = data[a].il;
                             this.selectedMerkezID = data[a].merkezId;
                             this.clickCity(this.selectedMerkezID);
@@ -110,7 +111,6 @@ export default {
             if(this.openAllCityOpen == true) {
                 this.geoFindLocation = x.currentTarget.innerHTML;
                 this.topOffset = x.currentTarget.offsetTop;
-                console.log(this.topOffset);
             }
             this.openAllCityOpen = false;
 
@@ -238,7 +238,7 @@ export default {
                 }
             ]
             for(let a = 0; a < this.cities.length; a++) {
-                if(this.distance(this.coordinator[0].y, this.coordinator[0].x, this.cities[a].boylam, this.cities[a].enlem) > 0 && this.distance(this.coordinator[0].y, this.coordinator[0].x, this.cities[a].boylam, this.cities[a].enlem) < 30) {
+                if(this.distance(this.coordinator[0].y, this.coordinator[0].x, this.cities[a].boylam, this.cities[a].enlem) > 0 && this.distance(this.coordinator[0].y, this.coordinator[0].x, this.cities[a].boylam, this.cities[a].enlem) < 20) {
                     this.geoFindLocation = this.cities[a].il;
                     this.selectedMerkezID = this.cities[a].merkezId;
                     this.clickCity(this.selectedMerkezID);
@@ -265,6 +265,8 @@ export default {
                     Math.sin(dLon/2) * Math.sin(dLon/2); 
             var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
             var d = R * c; // Distance in km
+
+            //console.log(d);
             return d;
         },
         openAllCity: function() {
@@ -273,6 +275,7 @@ export default {
             }else {
                 this.openAllCityOpen = false;
             }
+            
         }
     },
     beforeMount() {
