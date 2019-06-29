@@ -2,9 +2,7 @@
 
 ## Demo
 
-```
-https://www.fkonyali.com/vue/
-```
+[https://www.fkonyali.com/vue/](https://www.fkonyali.com/vue/)
 
 ## Project setup
 ```
