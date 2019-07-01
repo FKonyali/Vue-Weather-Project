@@ -97,7 +97,7 @@ export default {
                     for(let a = 0; a < data.length; a++) {
                         //console.log(distance(this.coordinator[0].x, this.coordinator[0].y, data[a].boylam, data[a].enlem));
                         //console.log(this.distance(this.coordinator[0].y, this.coordinator[0].x, data[a].boylam, data[a].enlem));
-                        if(this.distance(this.coordinator[0].y, this.coordinator[0].x, data[a].boylam, data[a].enlem) > 0 && this.distance(this.coordinator[0].y, this.coordinator[0].x, data[a].boylam, data[a].enlem) < 20) {
+                        if(this.distance(this.coordinator[0].y, this.coordinator[0].x, data[a].boylam, data[a].enlem) > 0 && this.distance(this.coordinator[0].y, this.coordinator[0].x, data[a].boylam, data[a].enlem) < 30) {
                             this.geoFindLocation = data[a].il;
                             this.selectedMerkezID = data[a].merkezId;
                             this.clickCity(this.selectedMerkezID);
@@ -238,7 +238,7 @@ export default {
                 }
             ]
             for(let a = 0; a < this.cities.length; a++) {
-                if(this.distance(this.coordinator[0].y, this.coordinator[0].x, this.cities[a].boylam, this.cities[a].enlem) > 0 && this.distance(this.coordinator[0].y, this.coordinator[0].x, this.cities[a].boylam, this.cities[a].enlem) < 20) {
+                if(this.distance(this.coordinator[0].y, this.coordinator[0].x, this.cities[a].boylam, this.cities[a].enlem) > 0 && this.distance(this.coordinator[0].y, this.coordinator[0].x, this.cities[a].boylam, this.cities[a].enlem) < 30) {
                     this.geoFindLocation = this.cities[a].il;
                     this.selectedMerkezID = this.cities[a].merkezId;
                     this.clickCity(this.selectedMerkezID);
