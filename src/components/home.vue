@@ -187,7 +187,7 @@ export default {
                 if(this.distance(this.coordinator[0].y, this.coordinator[0].x, this.cities[a].boylam, this.cities[a].enlem) > 0 && this.distance(this.coordinator[0].y, this.coordinator[0].x, this.cities[a].boylam, this.cities[a].enlem) < 30) {
                     this.geoFindLocation = this.cities[a].il;
                     this.selectedMerkezID = this.cities[a].merkezId;
-                    this.geoFindLocationDistrict = data[a].ilce;
+                    this.geoFindLocationDistrict = this.cities[a].ilce;
                     this.clickCity(this.selectedMerkezID);
                 }
             }
