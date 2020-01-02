@@ -81,11 +81,18 @@
         </div>
       </div>
     </div>
+    <div class="notice">
+      <p>
+        Hava durumunda çıkan sonuçlar test amaçlıdır. Doğru bilgi değildir.
+      </p>
+      <p>
+        Weather results are for testing purposes. It is not accurate information.
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
-import { async } from 'q';
 export default {
     name: 'selectCity',
     data() {
@@ -114,7 +121,7 @@ export default {
         }
     },
     async created() {
-      await fetch('https://servis.mgm.gov.tr/api/merkezler/iller')
+      await fetch('https://www.mocky.io/v2/5e0e426d330000cdd9aa8ab0')
         .then(res => res.json())
         .then(data => {
             this.order = data.sort((a,b) => (a.il > b.il) ? 1 : ((b.il > a.il) ? -1 : 0));
@@ -233,7 +240,7 @@ export default {
           }
         },
         fetchMerkezId: function(e) {
-          fetch('https://servis.mgm.gov.tr/api/sondurumlar?merkezid='+e)
+          fetch('https://www.mocky.io/v2/5e0e43803300002b00aa8abc&'+e)
             .then(res => res.json())
             .then(data => {
             let MM = ["Ocak", "Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım", "Aralık"],
@@ -258,7 +265,7 @@ export default {
 
           }).then(() => {
             let dd = ['Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt', 'Paz'];
-            fetch('https://servis.mgm.gov.tr/api/tahminler/gunluk?istno='+e)
+            fetch('https://www.mocky.io/v2/5e0e439f3300003bc5aa8abd&'+e)
                 .then(resG => resG.json())
                 .then(dataG => {
                   try {
@@ -308,7 +315,7 @@ export default {
           })
         },
         fetchIlceId: function(e) {
-          fetch('https://servis.mgm.gov.tr/api/merkezler/ililcesi?il='+e)
+          fetch('https://www.mocky.io/v2/5e0e43c63300004d00aa8abf&'+e)
             .then(res => res.json())
             .then(data => {
               this.orderDistrict = data.sort((a,b) => (a.il > b.il) ? 1 : ((b.il > a.il) ? -1 : 0));
